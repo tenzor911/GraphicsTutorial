@@ -37,8 +37,19 @@ public class GameField extends JPanel implements ActionListener{
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2 = (Graphics2D)g;
-        g2.drawImage(ImageOfSpace, 0, 0, null);
-        g2.drawImage(SpaceShip.getShipImage(), SpaceShip.get_CoordinateOfShip_X(), SpaceShip.get_CoordinateOfShip_Y(), null);
+        if (SpaceShip.get_CoordinateOfShip_X() == 590) {
+            SpaceShip.CoordinateOfBG_X = 0;
+        }
+        if (SpaceShip.get_CoordinateOfShip_X() == 1790) {
+            SpaceShip.Changed_CoordinateOfBG_X = 0;
+        }
+        
+        g2.drawImage(ImageOfSpace, 685 - SpaceShip.get_CoordinateOfBG_X(), 0, null);
+        
+        if (SpaceShip.get_CoordinateOfShip_X() >= 90) {
+            g2.drawImage(ImageOfSpace, 1000 - SpaceShip.get_ChangedCoordinateOfBG_X(), 0, null);
+        }
+        g2.drawImage(SpaceShip.getShipImage(), 100, SpaceShip.get_CoordinateOfShip_Y(), null);
     }
     
     private class AL extends KeyAdapter {

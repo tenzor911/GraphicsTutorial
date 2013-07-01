@@ -20,31 +20,28 @@ public class SpaceShip {
         ImageOfShip = ShipIcon.getImage();   
         CoordinateOfShip_X = 0;
         CoordinateOfShip_Y = 0;
-        CoordinateOfBG_X = 0;
-        Changed_CoordinateOfBG_X = 685;
-        
-        
+      //CoordinateOfBG_X = 0;
+      //Changed_CoordinateOfBG_X = 685;
     }
     
     public void move_ship_left() {
-        CoordinateOfShip_X = CoordinateOfShip_X - 2;
-        Changed_CoordinateOfBG_X = Changed_CoordinateOfBG_X - 2;
-        CoordinateOfBG_X = CoordinateOfBG_X - 2;
-        
+        CoordinateOfShip_X = CoordinateOfShip_X - 3;
+      //Changed_CoordinateOfBG_X = Changed_CoordinateOfBG_X - 2;
+      //CoordinateOfBG_X = CoordinateOfBG_X - 2;
     }
     
     public void move_ship_right() {
-        CoordinateOfShip_X = CoordinateOfShip_X + 2;
-        Changed_CoordinateOfBG_X = Changed_CoordinateOfBG_X + 2;
-        CoordinateOfBG_X = CoordinateOfBG_X + 2;
+        CoordinateOfShip_X = CoordinateOfShip_X + 3;
+        //Changed_CoordinateOfBG_X = Changed_CoordinateOfBG_X + 2;
+        //CoordinateOfBG_X = CoordinateOfBG_X + 2;
     }
     
     public void move_ship_up() {
-        CoordinateOfShip_Y = CoordinateOfShip_Y - 2;
+        CoordinateOfShip_Y = CoordinateOfShip_Y - 3;
     }
     
     public void move_ship_down() {
-        CoordinateOfShip_Y = CoordinateOfShip_Y + 2;
+        CoordinateOfShip_Y = CoordinateOfShip_Y + 3;
     }
     
     public int get_CoordinateOfShip_X() {
@@ -54,13 +51,13 @@ public class SpaceShip {
         return CoordinateOfShip_Y;
     }
     
-    public int get_CoordinateOfBG_X() {
+  /*public int get_CoordinateOfBG_X() {
         return CoordinateOfBG_X;
-    }
+    }*/
     
-    public int get_ChangedCoordinateOfBG_X() {
+  /*public int get_ChangedCoordinateOfBG_X() {
         return Changed_CoordinateOfBG_X;
-    }
+    }*/
     
     public Image getShipImage() {
         return ImageOfShip;

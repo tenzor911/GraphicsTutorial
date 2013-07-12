@@ -10,7 +10,7 @@ public class BackGround extends TimerTask {
       
     public void run() {
         BackGroundCoordinate_X--;
-        System.out.println(BackGroundCoordinate_X);
+        //System.out.println(BackGroundCoordinate_X);
         MoveBGTimer.schedule(new BackGround(), 10);
     }
     

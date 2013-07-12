@@ -2,6 +2,7 @@ package graphicstutorial;
 
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 public class SpaceShip {
@@ -15,13 +16,20 @@ public class SpaceShip {
     private Image ImageOfShip;
     private String ShipPathToIcon = "drash0.gif";
     
+    private static ArrayList SpaceShipLaserBullets;
+    
     public SpaceShip() {
         ImageIcon ShipIcon = new ImageIcon(this.getClass().getResource(ShipPathToIcon));
         ImageOfShip = ShipIcon.getImage();   
-        CoordinateOfShip_X = 0;
-        CoordinateOfShip_Y = 0;
+        CoordinateOfShip_X = 40;
+        CoordinateOfShip_Y = 280;
+        SpaceShipLaserBullets = new ArrayList();
       //CoordinateOfBG_X = 0;
       //Changed_CoordinateOfBG_X = 685;
+    }
+    
+    public static ArrayList getBullets() {
+        return SpaceShipLaserBullets;
     }
     
     public void move_ship_left() {
@@ -51,6 +59,11 @@ public class SpaceShip {
         return CoordinateOfShip_Y;
     }
     
+    public void makeAFire() {
+        LaserShot ShipLaserWeapon = new LaserShot((CoordinateOfShip_X + 60), (CoordinateOfShip_Y + (56 / 2)));
+        SpaceShipLaserBullets.add(ShipLaserWeapon);
+    }
+    
   /*public int get_CoordinateOfBG_X() {
         return CoordinateOfBG_X;
     }*/
@@ -75,6 +88,10 @@ public class SpaceShip {
         } else if (key == KeyEvent.VK_DOWN) {
             move_ship_down();
         } 
+        
+        if (key == KeyEvent.VK_SPACE) {
+            makeAFire();
+        }
     }     
 }
 

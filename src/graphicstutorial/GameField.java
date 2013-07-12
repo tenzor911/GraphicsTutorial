@@ -17,7 +17,7 @@ public class GameField extends JPanel implements ActionListener{
     
     SpaceShip SpaceShip;
     private Image ImageOfSpace;
-    private String ShipPathToIcon = "space_cr.gif";
+    private String ShipPathToIcon = "pic\\space_cr.gif";
     private Timer GameTime;
     private BackGround BackGround;
     private java.util.Timer BGTimer = new java.util.Timer();
@@ -47,9 +47,7 @@ public class GameField extends JPanel implements ActionListener{
             }
             
         }
-        
-        
-        
+
         SpaceShip.move_ship_left();
         SpaceShip.move_ship_right();
         

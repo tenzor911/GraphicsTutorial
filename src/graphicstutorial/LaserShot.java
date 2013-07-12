@@ -11,12 +11,12 @@ public class LaserShot {
     private boolean BulletIsVisible = true;
     
     private Image BulletImage;
-    private String BulletPathToIcon = "C:\\Users\\tenzor\\Documents\\NetBeansProjects\\GraphicsTutorial\\src\\graphicstutorial\\bullet_laser.gif";
+    private String BulletPathToIcon = "pic\\bullet_laser.gif";
     
     public LaserShot (int StartBulletPositionX, int StartBulletPositionY) {
         BulletCoordinateX = StartBulletPositionX;
         BulletCoordinateY = StartBulletPositionY;
-        ImageIcon DrawnBullet = new ImageIcon(BulletPathToIcon);
+        ImageIcon DrawnBullet = new ImageIcon(this.getClass().getResource(BulletPathToIcon));
         BulletImage = DrawnBullet.getImage();
         BulletIsVisible = true;
     }

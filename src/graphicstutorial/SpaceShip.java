@@ -1,5 +1,7 @@
 package graphicstutorial;
 
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -14,22 +16,21 @@ public class SpaceShip {
     protected int Changed_CoordinateOfBG_X;
     
     private Image ImageOfShip;
-    private String ShipPathToIcon = "drash0.gif";
-    
-    private static ArrayList SpaceShipLaserBullets;
+    private String ShipPathToIcon = "pic\\drash2.gif";
+    private static ArrayList LaserCharges;
     
     public SpaceShip() {
         ImageIcon ShipIcon = new ImageIcon(this.getClass().getResource(ShipPathToIcon));
         ImageOfShip = ShipIcon.getImage();   
         CoordinateOfShip_X = 40;
         CoordinateOfShip_Y = 280;
-        SpaceShipLaserBullets = new ArrayList();
+        LaserCharges = new ArrayList();
       //CoordinateOfBG_X = 0;
       //Changed_CoordinateOfBG_X = 685;
     }
     
     public static ArrayList getBullets() {
-        return SpaceShipLaserBullets;
+        return LaserCharges;
     }
     
     public void move_ship_left() {
@@ -61,7 +62,7 @@ public class SpaceShip {
     
     public void makeAFire() {
         LaserShot ShipLaserWeapon = new LaserShot((CoordinateOfShip_X + 60), (CoordinateOfShip_Y + (56 / 2)));
-        SpaceShipLaserBullets.add(ShipLaserWeapon);
+        LaserCharges.add(ShipLaserWeapon);
     }
     
   /*public int get_CoordinateOfBG_X() {

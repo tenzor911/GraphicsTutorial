@@ -4,10 +4,11 @@ import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
-public class SpaceShip {
+public class SpaceShip extends Applet implements KeyListener {
     private int CoordinateOfShip_X;
     private int CoordinateOfShip_Y;
     private int Changed_CoordinateOfShip_X;
@@ -63,6 +64,10 @@ public class SpaceShip {
     public void makeAFire() {
         LaserShot ShipLaserWeapon = new LaserShot((CoordinateOfShip_X + 60), (CoordinateOfShip_Y + (56 / 2)));
         LaserCharges.add(ShipLaserWeapon);
+        GameSounds GS = new GameSounds();
+        GS.ShotSound();
+        addKeyListener(this);
+        
     }
     
   /*public int get_CoordinateOfBG_X() {
@@ -93,6 +98,16 @@ public class SpaceShip {
         if (key == KeyEvent.VK_SPACE) {
             makeAFire();
         }
-    }     
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
 
